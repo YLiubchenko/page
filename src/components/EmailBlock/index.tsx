@@ -1,28 +1,21 @@
-import ImgBlock from "../ImgBlock";
-import Navigation from "../Navigation";
+import { Wrapper } from '../../styles';
+import { EmailDiv } from './styles';
 
-import {Wrapper} from "../../styles";
-import {ContentDiv, HeaderInfoDiv} from "./styles";
-
-const Header = () => {
-    return (
-        <header>
-            <Navigation/>
-            <HeaderInfoDiv>
-                <Wrapper>
-                    <ContentDiv>
-                        <div>
-                            <h1>Find your community, Find your strength</h1>
-                            <button>Label</button>
-                        </div>
-                        <ImgBlock
-                            imgSrc="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSZ9se8N-sEQ-LU7cYhO9hWVljFF3eS1vUYQ&usqp=CAU"
-                            alt="Hello"/>
-                    </ContentDiv>
-                </Wrapper>
-            </HeaderInfoDiv>
-        </header>
-    );
+const EmailBlock = () => {
+  return (
+    <EmailDiv>
+      <Wrapper>
+        <h2>Laboris nisi ut aliquip ex ea commodo consequat.</h2>
+        <p>
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <div>
+          <input type="email" placeholder="Email" />
+          <button>text</button>
+        </div>
+      </Wrapper>
+    </EmailDiv>
+  );
 };
 
-export default Header;
+export default EmailBlock;

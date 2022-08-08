@@ -1,13 +1,33 @@
-import { Logo } from "../../shared/assets/icons/logo";
-import {Wrapper} from "../../styles";
+import ImgBlock from '../ImgBlock';
+import Navigation from '../Navigation';
 
-const Navigation = () => {
-    return (
+import { Wrapper } from '../../styles';
+import { ContentDiv, HeaderInfoDiv } from './styles';
+import { Logo } from '../../shared/assets/icons/logo';
+
+const Header = () => {
+  return (
+    <header>
+      <Wrapper>
+        <Logo />
+        <Navigation />
+      </Wrapper>
+      <HeaderInfoDiv>
         <Wrapper>
-            <Logo/>
-            <nav>Navigation</nav>
+          <ContentDiv>
+            <div>
+              <h1>Find your community, Find your strength</h1>
+              <button>Label</button>
+            </div>
+            <ImgBlock
+              imgSrc="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSZ9se8N-sEQ-LU7cYhO9hWVljFF3eS1vUYQ&usqp=CAU"
+              alt="Hello"
+            />
+          </ContentDiv>
         </Wrapper>
-    );
+      </HeaderInfoDiv>
+    </header>
+  );
 };
 
-export default Navigation;
+export default Header;

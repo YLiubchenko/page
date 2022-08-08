@@ -1,21 +1,17 @@
-import {Wrapper} from "../../styles";
-import Navigation from "../Navigation";
-import {ContentDiv, HeaderInfoDiv} from "./styles";
+import { FC } from 'react';
+import { ImgDiv } from './styles';
 
-const Header = () => {
-    return (
-        <header>
-            <Navigation/>
-            <HeaderInfoDiv>
-                <Wrapper>
-                    <ContentDiv>
-                        <TextBlock>Find your community, Find your strength</TextBlock>
-                        <ImgBlock></ImgBlock>
-                    </ContentDiv>
-                </Wrapper>
-            </HeaderInfoDiv>
-        </header>
-    );
+interface IProps {
+  alt: string;
+  imgSrc: string;
+}
+
+const ImgBlock: FC<IProps> = ({ alt, imgSrc }) => {
+  return (
+    <ImgDiv>
+      <img src={imgSrc} alt={alt} />
+    </ImgDiv>
+  );
 };
 
-export default Header;
+export default ImgBlock;

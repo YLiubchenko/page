@@ -1,21 +1,20 @@
-import {ContentDiv} from "./styles";
-import ImgBlock from "../ImgBlock";
+import { FC } from 'react';
+import { TextDiv } from './styles';
 
-const Content = () => {
-    return (
-        <ContentDiv>
-            <video src=""></video>
-            <ImgBlock
-                imgSrc="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSZ9se8N-sEQ-LU7cYhO9hWVljFF3eS1vUYQ&usqp=CAU"
-                alt="Hello"/>
-            <ImgBlock
-            imgSrc="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSZ9se8N-sEQ-LU7cYhO9hWVljFF3eS1vUYQ&usqp=CAU"
-            alt="Hello"/>
-            <ImgBlock
-            imgSrc="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSZ9se8N-sEQ-LU7cYhO9hWVljFF3eS1vUYQ&usqp=CAU"
-            alt="Hello"/>
-        </ContentDiv>
-    );
+interface IProps {
+  title: string;
+  text: string;
+}
+
+const TextBlock: FC<IProps> = ({ title, text }) => {
+  return (
+    <TextDiv>
+      <div>
+        <h2>{title}</h2>
+        <p>{text}</p>
+      </div>
+    </TextDiv>
+  );
 };
 
-export default Content;
+export default TextBlock;

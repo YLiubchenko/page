@@ -1,11 +1,13 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-export const TitleH5 = styled.h5`
+export const LinkA = styled.a`
   font-family: 'Nunito Sans', sans-serif;
   font-style: normal;
-  font-weight: 800;
-  font-size: 12px;
-  line-height: 14px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
   color: #404040;
-  text-transform: uppercase;
+  cursor: pointer;
+  display: block;
+  margin-top: 10px;
 `;

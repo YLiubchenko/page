@@ -1,46 +1,39 @@
-import {ContentDiv} from "./styles";
-import ImgBlock from "../ImgBlock";
-import TextBlock from "./TextBlock";
-import {Wrapper} from "../../styles";
-import Line from "../Line/Line";
+import { Wrapper } from '../../styles';
+import { AdditionDiv } from './styles';
+import TextBlock from './TextBlock';
 
-const Content = () => {
-    return (
-        <Wrapper>
-            <ContentDiv>
-                <video src=""></video>
-                <TextBlock
-                    text="Sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                    title="Quis nostrud exercitation ullamco laboris"/>
-            </ContentDiv>
-            <ContentDiv>
-                <ImgBlock
-                    imgSrc="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSZ9se8N-sEQ-LU7cYhO9hWVljFF3eS1vUYQ&usqp=CAU"
-                    alt="Hello"/>
-                <TextBlock
-                    text="Sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                    title="Quis nostrud exercitation ullamco laboris"/>
-                <Line/>
-            </ContentDiv>
-            <ContentDiv>
-                <TextBlock
-                    text="Sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                    title="Quis nostrud exercitation ullamco laboris"/>
-                <ImgBlock
-                    imgSrc="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSZ9se8N-sEQ-LU7cYhO9hWVljFF3eS1vUYQ&usqp=CAU"
-                    alt="Hello"/>
-                <Line/>
-            </ContentDiv>
-            <ContentDiv>
-                <TextBlock
-                    text="Sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                    title="Quis nostrud exercitation ullamco laboris"/>
-                <ImgBlock
-                    imgSrc="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSZ9se8N-sEQ-LU7cYhO9hWVljFF3eS1vUYQ&usqp=CAU"
-                    alt="Hello"/>
-            </ContentDiv>
-        </Wrapper>
-    );
+const Addition = () => {
+  return (
+    <Wrapper>
+      <h4>In addition, Optum Behavioral Health provides special access to...</h4>
+      <AdditionDiv>
+        <TextBlock
+          title="title"
+          text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. = facere maxime provident quae quas repudiandae saepe voluptatem."
+        />
+        <TextBlock
+          title="title"
+          text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur culpa error explicabo facere maxime provident quae quas repudiandae saepe voluptatem."
+        />
+        <TextBlock
+          title="title"
+          text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. pudiandae saepe voluptatem."
+        />
+        <TextBlock
+          title="title"
+          text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur culpa error explicabo facere maxime provident quae quas repudiandae saepe voluptatem."
+        />
+        <TextBlock
+          title="title"
+          text="Lorem ipsum dolor sit amet,  provident quae quas repudiandae saepe voluptatem."
+        />
+        <TextBlock
+          title="title"
+          text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur culpa error explicabo facere maxime provident quae quas repudiandae saepe voluptatem. explicabo facere maxime provident quae quas repudiandae saepe voluptatem."
+        />
+      </AdditionDiv>
+    </Wrapper>
+  );
 };
 
-export default Content;
+export default Addition;

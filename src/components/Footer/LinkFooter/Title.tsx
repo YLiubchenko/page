@@ -1,15 +1,13 @@
-import {FC} from "react";
-
-import { TitleH5 } from "./styles";
+import { FC } from 'react';
+import { LinkA } from './styles';
 
 interface IProps {
-    title: string;
+  text: string;
+  link?: string;
 }
 
-const Title: FC<IProps> = ({title}) => {
-    return (
-        <TitleH5>{title}</TitleH5>
-    );
+const LinkFooter: FC<IProps> = ({ text, link }) => {
+  return <LinkA href={link}>{text}</LinkA>;
 };
 
-export default Title;
+export default LinkFooter;
