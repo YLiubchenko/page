@@ -10,7 +10,6 @@ export const TextDiv = styled.div`
 
 export const TitleH3 = styled.h3`
   font-family: 'Nunito Sans', sans-serif;
-  font-style: normal;
   font-weight: 700;
   font-size: 26px;
   line-height: 32px;
@@ -19,7 +18,6 @@ export const TitleH3 = styled.h3`
 
 export const TextP = styled.p`
   font-family: 'Nunito Sans', sans-serif;
-  font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;

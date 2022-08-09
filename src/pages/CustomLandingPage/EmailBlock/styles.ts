@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { DeviceSize } from '../../../shared/constants';
+
 export const EmailDiv = styled.div`
   background: #dadada33;
   margin-top: 20px;
@@ -7,6 +9,10 @@ export const EmailDiv = styled.div`
 
 export const ContainerDiv = styled.div`
   padding: 21px 132px 40px;
+
+  @media (max-width: ${DeviceSize.mobile}px) {
+    padding: 15px;
+  }
 `;
 
 export const TitleH2 = styled.h2`
@@ -35,8 +41,9 @@ export const FormDiv = styled.div`
 
   & input {
     max-width: 331px;
-    min-width: 213px;
     width: 100%;
     padding-left: 10px;
+    border-radius: 5px;
+    border: 1px solid #cdcdcd;
   }
 `;

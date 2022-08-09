@@ -8,16 +8,12 @@ export const AuthNavDiv = styled.div`
 `;
 
 const RouteLink = styled(Link)`
+  min-height: 39px;
+  line-height: 1;
   padding: 10px 20px;
   font-size: 16px;
 `;
 
 export const SinInLink = styled(RouteLink)`
   border: 1px solid #929292;
-`;
-
-export const SinUpLink = styled(RouteLink)`
-  background: #fee019;
-  border: 1px solid #fee019;
-  font-weight: 700;
 `;
