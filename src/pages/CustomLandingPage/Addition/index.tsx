@@ -6,8 +6,8 @@ const Addition = () => {
   return (
     <AdditionDiv>
       <TitleH2>
-        In addition, Optum Behavioral Health provides special access In addition, Optum Behavioral Health provides
-        special access In addition, Optum Behavioral Health provides special access{' '}
+        In addition, Optum Behavioral Health provides special access to addition, Optum Behavioral Health provides
+        special access In addition, Optum Behavioral Health provides special access
       </TitleH2>
       <AdditionContentDiv>
         <TextBlock

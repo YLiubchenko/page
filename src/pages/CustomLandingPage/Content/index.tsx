@@ -4,7 +4,7 @@ import EmptyPlay from '../../../assets/EmptyPlay';
 import ImageBlock from '../../../components/ImageBlock';
 import Line from '../../../components/Line/Line';
 
-import { ContentDiv, EmptyPlayDiv } from './styles';
+import { ContentDiv, EmptyPlayDiv, VideoDiv } from './styles';
 
 const Content = () => {
   const src = false;
@@ -13,7 +13,9 @@ const Content = () => {
     <>
       <ContentDiv>
         {src ? (
-          <video src="src/pages/CustomLandingPage/Content/index"></video>
+          <VideoDiv>
+            <video src={src}></video>
+          </VideoDiv>
         ) : (
           <EmptyPlayDiv>
             <EmptyPlay />

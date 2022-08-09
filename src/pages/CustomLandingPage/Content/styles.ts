@@ -1,13 +1,15 @@
 import styled from 'styled-components';
 
+import { DeviceSize } from '../../../shared/constants';
+
 export const ContentDiv = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-auto-rows: minmax(315px, auto);
+  grid-auto-rows: minmax(145px, auto);
   grid-gap: 18px 20px;
   margin-top: 20px;
 
-  @media (max-width: 870px) {
+  @media (max-width: ${DeviceSize.mobile}px) {
     grid-template-columns: 1fr;
   }
 `;
@@ -18,6 +20,16 @@ export const EmptyPlayDiv = styled.div`
   justify-content: center;
 
   & svg {
+    width: 100%;
+  }
+`;
+
+export const VideoDiv = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & video {
     width: 100%;
   }
 `;

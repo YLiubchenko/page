@@ -1,13 +1,15 @@
 import { FC } from 'react';
 
-import { AuthNavDiv, SinInLink, SinUpLink } from './styles';
-import { AppPagePath } from '../../pages/AppPagePath';
+import { AppPagePath } from '../../../pages/AppPagePath';
+import JoinLink from '../JoinLink';
+
+import { AuthNavDiv, SinInLink } from './styles';
 
 const Auth: FC = () => {
   return (
     <AuthNavDiv>
       <SinInLink to={AppPagePath.SIGNIN}>Sign in</SinInLink>
-      <SinUpLink to={AppPagePath.JOIN_NOW}>Join now!</SinUpLink>
+      <JoinLink text="Join now!" />
     </AuthNavDiv>
   );
 };
