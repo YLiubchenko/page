@@ -1,26 +1,31 @@
-import ImgBlock from '../../../components/ImageBlock';
+import { FC } from 'react';
 
-import Button from '../../../components/Button';
+import ImgBlock from '../../../components/ImageBlock';
+import { IButton, IImg } from '../../../shared/models/customLandingPage.model';
+import LinkA from '../../../components/LinkA';
 
 import { AppWrapperDiv } from '../../../styles';
 import { ContentDiv, H1, HeaderInfoDiv, TextBlockDiv } from './styles';
 
-const HeaderInfoBlock = () => {
-  const buttonText = 'Label';
-  const title = 'Find your community, Find your strength';
-  const titleStyle = {};
+interface IProps {
+  mainImg: IImg;
+  button: IButton;
+  title: string;
+}
+
+const HeaderInfoBlock: FC<IProps> = ({ mainImg, button, title }) => {
+  const { url: imgSrc, alt } = mainImg;
+  const { title: buttonText, url } = button;
+
   return (
     <HeaderInfoDiv>
       <AppWrapperDiv>
         <ContentDiv>
           <TextBlockDiv>
-            <H1 style={titleStyle}>{title}</H1>
-            <Button text={buttonText} />
+            <H1>{title}</H1>
+            <LinkA text={buttonText} link={url} />
           </TextBlockDiv>
-          <ImgBlock
-            imgSrc="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSZ9se8N-sEQ-LU7cYhO9hWVljFF3eS1vUYQ&usqp=CAU"
-            alt="Hello"
-          />
+          <ImgBlock url={imgSrc} alt={alt} />
         </ContentDiv>
       </AppWrapperDiv>
     </HeaderInfoDiv>

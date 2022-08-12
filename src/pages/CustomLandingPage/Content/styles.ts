@@ -13,23 +13,3 @@ export const ContentDiv = styled.div`
     grid-template-columns: 1fr;
   }
 `;
-
-export const EmptyPlayDiv = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  & svg {
-    width: 100%;
-  }
-`;
-
-export const VideoDiv = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  & video {
-    width: 100%;
-  }
-`;

@@ -4,15 +4,15 @@ import { TextDiv, TextP, TitleH2 } from './styles';
 
 interface IProps {
   title: string;
-  text: string;
+  subTitle: string;
   className?: string;
 }
 
-const TextBlock: FC<IProps> = ({ className, title, text }) => {
+const TextBlock: FC<IProps> = ({ className, title, subTitle }) => {
   return (
     <TextDiv className={className}>
       <TitleH2>{title}</TitleH2>
-      <TextP>{text}</TextP>
+      <TextP>{subTitle}</TextP>
     </TextDiv>
   );
 };

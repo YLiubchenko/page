@@ -1,21 +1,17 @@
 import { FC } from 'react';
 
 import Burger from '../../../assets/Burger';
-import JoinLink from '../JoinLink';
-import PartnerLogoBlock from '../PartnerLogoBlock';
+import { Logo } from '../../../assets/icons/logo';
+import LinkA from '../../../components/LinkA';
 
 import { Header } from './styles';
 
-interface IProps {
-  isPartner: boolean;
-}
-
-const MobileHeader: FC<IProps> = ({ isPartner }) => {
+const MobileHeader: FC = () => {
   return (
     <Header>
       <Burger />
-      <PartnerLogoBlock isPartner={isPartner} />
-      <JoinLink text="Join" />
+      <Logo />
+      <LinkA text="Join" />
     </Header>
   );
 };

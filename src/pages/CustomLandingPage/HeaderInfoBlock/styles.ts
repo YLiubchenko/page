@@ -15,6 +15,10 @@ export const ContentDiv = styled.div`
 
   @media (max-width: ${DeviceSize.mobile}px) {
     grid-template-columns: 1fr;
+
+    & a {
+      margin: auto;
+    }
   }
 `;
 

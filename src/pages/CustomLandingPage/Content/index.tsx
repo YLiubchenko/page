@@ -1,62 +1,42 @@
-import TextBlock from './TextBlock';
+import { FC, Fragment } from 'react';
 
-import EmptyPlay from '../../../assets/EmptyPlay';
-import ImageBlock from '../../../components/ImageBlock';
 import Line from '../../../components/Line/Line';
+import { BlockType, IRowData } from '../../../shared/models/customLandingPage.model';
+import useGetBlockByType from './useGetBlockByType';
+import { useMobileMediaQuery } from '../../../shared/hooks/usMediaQueries.hooks';
 
-import { ContentDiv, EmptyPlayDiv, VideoDiv } from './styles';
+import { ContentDiv } from './styles';
 
-const Content = () => {
-  const src = false;
+interface IProps {
+  contentBlocks: IRowData[];
+}
+
+const Content: FC<IProps> = ({ contentBlocks }) => {
+  const getBlockByType = useGetBlockByType();
+  const { isMobile } = useMobileMediaQuery();
 
   return (
     <>
-      <ContentDiv>
-        {src ? (
-          <VideoDiv>
-            <video src={src}></video>
-          </VideoDiv>
-        ) : (
-          <EmptyPlayDiv>
-            <EmptyPlay />
-          </EmptyPlayDiv>
-        )}
-        <TextBlock
-          text="Sit amet, consectetur adipiscing elit, sed do eiusmod tempor izxczxcxz        dsfs df wref wer wre wrw we ncididunt ut labore et dolore magna aliqua."
-          title="Quis nostrud exercitation ullamco laboris"
-        />
-        <ImageBlock
-          imgSrc="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSZ9se8N-sEQ-LU7cYhO9hWVljFF3eS1vUYQ&usqp=CAU"
-          alt="Hello"
-        />
-        <TextBlock
-          text="Sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          title="Quis nostrud exercitation ullamco laboris"
-        />
-      </ContentDiv>
-      <Line />
-      <ContentDiv>
-        <TextBlock
-          className="mobile-reverse"
-          text="Sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          title="Quis nostrud exercitation ullamco laboris"
-        />
-        <ImageBlock
-          imgSrc="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSZ9se8N-sEQ-LU7cYhO9hWVljFF3eS1vUYQ&usqp=CAU"
-          alt="Hello"
-        />
-      </ContentDiv>
-      <Line />
-      <ContentDiv>
-        <ImageBlock
-          imgSrc="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSZ9se8N-sEQ-LU7cYhO9hWVljFF3eS1vUYQ&usqp=CAU"
-          alt="Hello"
-        />
-        <TextBlock
-          text="Sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-          title="Quis nostrud exercitation ullamco laboris"
-        />
-      </ContentDiv>
+      {contentBlocks.map(({ right, left }, index) => {
+        return (
+          <Fragment key={index}>
+            <ContentDiv>
+              {isMobile && left.type === BlockType.TextBlock ? (
+                <>
+                  {getBlockByType(right)}
+                  {getBlockByType(left)}
+                </>
+              ) : (
+                <>
+                  {getBlockByType(left)}
+                  {getBlockByType(right)}
+                </>
+              )}
+            </ContentDiv>
+            <Line />
+          </Fragment>
+        );
+      })}
     </>
   );
 };

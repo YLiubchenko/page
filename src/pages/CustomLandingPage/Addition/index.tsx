@@ -1,39 +1,22 @@
+import { FC } from 'react';
+
 import TextBlock from './TextBlock';
+import { IAdditionItem } from '../../../shared/models/customLandingPage.model';
 
 import { AdditionContentDiv, AdditionDiv, TitleH2 } from './styles';
 
-const Addition = () => {
+interface IProps {
+  title: string;
+  items: IAdditionItem[];
+}
+const Addition: FC<IProps> = ({ title, items }) => {
   return (
     <AdditionDiv>
-      <TitleH2>
-        In addition, Optum Behavioral Health provides special access to addition, Optum Behavioral Health provides
-        special access In addition, Optum Behavioral Health provides special access
-      </TitleH2>
+      <TitleH2>{title}</TitleH2>
       <AdditionContentDiv>
-        <TextBlock
-          title="Live and Work well"
-          text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. = facere maxime provident quae quas repudiandae saepe voluptatem."
-        />
-        <TextBlock
-          title="title"
-          text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur culpa error explicabo facere maxime provident quae quas repudiandae saepe voluptatem."
-        />
-        <TextBlock
-          title="title"
-          text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. pudiandae saepe voluptatem."
-        />
-        <TextBlock
-          title="title"
-          text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur culpa error explicabo facere maxime provident quae quas repudiandae saepe voluptatem."
-        />
-        <TextBlock
-          title="title"
-          text="Lorem ipsum dolor sit amet,  provident quae quas repudiandae saepe voluptatem."
-        />
-        <TextBlock
-          title="title"
-          text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur culpa error explicabo facere maxime provident quae quas repudiandae saepe voluptatem. explicabo facere maxime provident quae quas repudiandae saepe voluptatem."
-        />
+        {items.map((item, index) => {
+          return <TextBlock key={index} {...item} />;
+        })}
       </AdditionContentDiv>
     </AdditionDiv>
   );

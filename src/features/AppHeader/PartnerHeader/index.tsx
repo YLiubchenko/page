@@ -1,18 +1,28 @@
 import { FC } from 'react';
 
-import JoinLink from '../JoinLink';
-import PartnerLogoBlock from '../PartnerLogoBlock';
+import { Logo } from '../../../assets/icons/logo';
+import Burger from '../../../assets/Burger';
+import { ILogo } from '../../../shared/models/customLandingPage.model';
+import LinkA from '../../../components/LinkA';
 
+import { DividerDiv, LogoWrapperDiv } from '../styles';
 import { Header, WrapperDiv } from './styles';
 
-const PartnerHeader: FC = () => {
+interface IProps {
+  logoData: ILogo;
+}
+
+const PartnerHeader: FC<IProps> = ({ logoData }) => {
   return (
     <Header>
+      <Burger />
+      <LogoWrapperDiv>
+        <Logo />
+        <DividerDiv />
+        <img src={logoData.url} alt={logoData.alt} />
+      </LogoWrapperDiv>
       <WrapperDiv>
-        <PartnerLogoBlock />
-      </WrapperDiv>
-      <WrapperDiv>
-        <JoinLink text="Join" />
+        <LinkA text="Join" />
       </WrapperDiv>
     </Header>
   );

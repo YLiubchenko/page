@@ -4,13 +4,13 @@ import { ImgDiv } from './styles';
 
 interface IProps {
   alt: string;
-  imgSrc: string;
+  url: string;
 }
 
-const ImageBlock: FC<IProps> = ({ alt, imgSrc }) => {
+const ImageBlock: FC<IProps> = ({ alt, url }) => {
   return (
     <ImgDiv>
-      <img src={imgSrc} alt={alt} />
+      <img src={url} alt={alt} />
     </ImgDiv>
   );
 };

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+
+import LinkA from '../../../components/LinkA';
 
 export const AuthNavDiv = styled.div`
   display: flex;
@@ -7,13 +8,12 @@ export const AuthNavDiv = styled.div`
   gap: 10px;
 `;
 
-const RouteLink = styled(Link)`
+export const SinInLink = styled(LinkA)`
   min-height: 39px;
   line-height: 1;
   padding: 10px 20px;
   font-size: 16px;
-`;
-
-export const SinInLink = styled(RouteLink)`
+  font-weight: 400;
+  background: 0;
   border: 1px solid #929292;
 `;

@@ -1,24 +1,33 @@
-import React from 'react';
+import React, { FC } from 'react';
 
 import HeaderInfoBlock from './HeaderInfoBlock';
 import Content from './Content';
-import EmailBlock from './EmailBlock';
+import FormBlock from './FormBlock';
 import Addition from './Addition';
 import JoinBlock from './JoinBlock';
+import { IAddition, IBottomCTA, IForm, IHero, IRowData } from '../../shared/models/customLandingPage.model';
 
 import { AppWrapperDiv } from '../../styles';
 
-const CustomLandingPage = () => {
+interface IProps {
+  hero: IHero;
+  contentBlocks: IRowData[];
+  form: IForm;
+  additionalServices: IAddition;
+  bottomCTA: IBottomCTA;
+}
+
+const CustomLandingPage: FC<IProps> = ({ hero, contentBlocks, form, additionalServices, bottomCTA }) => {
   return (
     <>
-      <HeaderInfoBlock />
+      <HeaderInfoBlock {...hero} />
       <AppWrapperDiv>
-        <Content />
+        <Content contentBlocks={contentBlocks} />
       </AppWrapperDiv>
-      <EmailBlock />
+      <FormBlock {...form} />
       <AppWrapperDiv>
-        <Addition />
-        <JoinBlock />
+        <Addition {...additionalServices} />
+        <JoinBlock {...bottomCTA} />
       </AppWrapperDiv>
     </>
   );
