@@ -1,17 +1,17 @@
 import $api from '../../http';
+
 import { ICustomLandingPageModel } from '../models/customLandingPage.model';
 
-const ApiRoutes = {
-  customLandingPage: '',
+const ApiPath = {
+  analyticsSettings: 'analytics',
 };
-
 class CustomLandingPageService {
   static getPageData(path: string): Promise<ICustomLandingPageModel> {
-    return $api.get(ApiRoutes.customLandingPage, {
-      params: {
-        path,
-      },
-    });
+    return $api.get(path).then(({ data }) => data);
+  }
+
+  static getAnalyticsSetting(): Promise<any> {
+    return $api.get(ApiPath.analyticsSettings).then(({ data }) => data);
   }
 }
 

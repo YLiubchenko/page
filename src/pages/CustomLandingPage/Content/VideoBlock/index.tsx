@@ -4,13 +4,13 @@ import ReactPlayer from 'react-player';
 import { VideoDiv } from './styles';
 
 interface IProps {
-  src: string;
+  url: string;
 }
 
-const VideoBlock: FC<IProps> = ({ src }) => {
+const VideoBlock: FC<IProps> = ({ url }) => {
   return (
     <VideoDiv>
-      <ReactPlayer url={src} width="100%" />
+      <ReactPlayer allowFullScreen url={url} width="100%" />
     </VideoDiv>
   );
 };

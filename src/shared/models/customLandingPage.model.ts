@@ -11,7 +11,7 @@ export interface IButton {
 
 export interface IHero {
   title: string;
-  mainImg: IImg;
+  image: IImg;
   button: IButton;
 }
 
@@ -24,7 +24,7 @@ export enum BlockType {
 type Column = BlockType.ImgBlock | BlockType.VideoBlock | BlockType.TextBlock;
 
 export interface IVideoBlock {
-  src: string;
+  url: string;
 }
 
 export interface ITextBlock {
@@ -33,20 +33,20 @@ export interface ITextBlock {
 }
 
 export interface IMageBlock {
-  url: string;
-  alt: string;
+  image: IImg;
 }
 
 export type IData = IVideoBlock | IMageBlock | ITextBlock;
 
 export interface IColumnBlock {
-  type: Column;
-  data: IData;
+  column: {
+    type: Column;
+    data: IData;
+  };
 }
 
 export interface IRowData {
-  left: IColumnBlock;
-  right: IColumnBlock;
+  row: IColumnBlock[];
 }
 
 export interface IForm {
@@ -65,7 +65,7 @@ export interface IAddition {
   items: IAdditionItem[];
 }
 
-export interface IBottomCTA {
+export interface ICta {
   title: string;
   button: IButton;
 }
@@ -82,5 +82,5 @@ export interface ICustomLandingPageModel {
   contentBlocks: IRowData[];
   form: IForm;
   additionalServices: IAddition;
-  bottomCTA: IBottomCTA;
+  cta: ICta;
 }

@@ -8,13 +8,13 @@ import { AppWrapperDiv } from '../../../styles';
 import { ContentDiv, H1, HeaderInfoDiv, TextBlockDiv } from './styles';
 
 interface IProps {
-  mainImg: IImg;
+  image: IImg;
   button: IButton;
   title: string;
 }
 
-const HeaderInfoBlock: FC<IProps> = ({ mainImg, button, title }) => {
-  const { url: imgSrc, alt } = mainImg;
+const HeaderInfoBlock: FC<IProps> = ({ image, button, title }) => {
+  const { url: imgSrc, alt } = image;
   const { title: buttonText, url } = button;
 
   return (

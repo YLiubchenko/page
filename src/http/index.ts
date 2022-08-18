@@ -1,7 +1,11 @@
 import axios, { AxiosRequestConfig } from 'axios';
 
+export const { APP_CONFIG } = window;
+
+const baseURL = APP_CONFIG.ENV === 'prod' ? APP_CONFIG.SERVER_URL : APP_CONFIG.DEV_SERVER_URL;
+
 const $api = axios.create({
-  baseURL: `${process.env.REACT_APP_SERVER_URL}/api`,
+  baseURL,
 });
 
 const handleRequest = (config: AxiosRequestConfig) => {

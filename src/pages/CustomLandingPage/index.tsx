@@ -5,7 +5,7 @@ import Content from './Content';
 import FormBlock from './FormBlock';
 import Addition from './Addition';
 import JoinBlock from './JoinBlock';
-import { IAddition, IBottomCTA, IForm, IHero, IRowData } from '../../shared/models/customLandingPage.model';
+import { IAddition, ICta, IForm, IHero, IRowData } from '../../shared/models/customLandingPage.model';
 
 import { AppWrapperDiv } from '../../styles';
 
@@ -14,10 +14,10 @@ interface IProps {
   contentBlocks: IRowData[];
   form: IForm;
   additionalServices: IAddition;
-  bottomCTA: IBottomCTA;
+  cta: ICta;
 }
 
-const CustomLandingPage: FC<IProps> = ({ hero, contentBlocks, form, additionalServices, bottomCTA }) => {
+const CustomLandingPage: FC<IProps> = ({ hero, contentBlocks, form, additionalServices, cta }) => {
   return (
     <>
       <HeaderInfoBlock {...hero} />
@@ -27,7 +27,7 @@ const CustomLandingPage: FC<IProps> = ({ hero, contentBlocks, form, additionalSe
       <FormBlock {...form} />
       <AppWrapperDiv>
         <Addition {...additionalServices} />
-        <JoinBlock {...bottomCTA} />
+        <JoinBlock {...cta} />
       </AppWrapperDiv>
     </>
   );

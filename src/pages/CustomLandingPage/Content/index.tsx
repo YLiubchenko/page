@@ -17,23 +17,25 @@ const Content: FC<IProps> = ({ contentBlocks }) => {
 
   return (
     <>
-      {contentBlocks.map(({ right, left }, index) => {
+      {contentBlocks.map(({ row }, index) => {
+        const [left, right] = row;
+
         return (
           <Fragment key={index}>
             <ContentDiv>
-              {isMobile && left.type === BlockType.TextBlock ? (
+              {isMobile && left.column.type === BlockType.TextBlock ? (
                 <>
-                  {getBlockByType(right)}
-                  {getBlockByType(left)}
+                  {getBlockByType(right.column)}
+                  {getBlockByType(left.column)}
                 </>
               ) : (
                 <>
-                  {getBlockByType(left)}
-                  {getBlockByType(right)}
+                  {getBlockByType(left.column)}
+                  {getBlockByType(right.column)}
                 </>
               )}
             </ContentDiv>
-            <Line />
+            {contentBlocks.length - 1 !== index && <Line />}
           </Fragment>
         );
       })}

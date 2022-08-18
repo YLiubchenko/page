@@ -5,7 +5,6 @@ export const VideoDiv = styled.div`
   align-items: center;
   justify-content: center;
 
-  & video {
-    width: 100%;
-  }
+  width: 100%;
+  max-height: 315px;
 `;
