@@ -10,7 +10,7 @@ interface IProps {
   subTitle: string;
   embedCode: any;
 }
-const FormBlock: FC<IProps> = ({ title, subTitle, embedCode }) => {
+const FormBlock: FC<IProps> = ({ title, subTitle }) => {
   const btnText = 'CTA';
 
   return (

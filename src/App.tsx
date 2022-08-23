@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
+import ReactHtmlParser from 'react-html-parser';
 
 import Footer from './features/Footer';
 import AppHeader from './features/AppHeader';
@@ -7,18 +9,19 @@ import CustomLandingPage from './pages/CustomLandingPage';
 import customLandingPageService from './shared/services/customLandingPage.service';
 import { ICustomLandingPageModel } from './shared/models/customLandingPage.model';
 import useAnalytics from './shared/hooks/useAnalytics';
+import useMetaData from './shared/hooks/useMetaData';
 
 import { AppWrapperDiv } from './styles';
 
 function App() {
   const { pathname, search } = useLocation();
   const [pageData, setPageData] = useState<ICustomLandingPageModel>();
+  const metaData = useMetaData();
   useAnalytics();
 
   const getPageData = async () => {
     try {
-      const last = pathname.substring(pathname.lastIndexOf('/') + 1, pathname.length);
-      const data = await customLandingPageService.getPageData(last + search);
+      const data = await customLandingPageService.getPageData(pathname, search);
 
       setPageData(data);
     } catch (e: any) {
@@ -28,7 +31,7 @@ function App() {
 
   useEffect(() => {
     getPageData();
-  }, [pathname]);
+  }, [pathname, search]);
 
   if (!pageData) {
     return null;
@@ -36,6 +39,7 @@ function App() {
 
   return (
     <>
+      <Helmet>{ReactHtmlParser(metaData)}</Helmet>
       <AppWrapperDiv>
         <AppHeader isPartner={pageData.pageType === 'partner'} logoData={pageData.headerLogo} />
       </AppWrapperDiv>

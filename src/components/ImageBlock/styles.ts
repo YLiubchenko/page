@@ -7,6 +7,5 @@ export const ImgDiv = styled.div`
 
   img {
     width: 100%;
-    max-height: 315px;
   }
 `;

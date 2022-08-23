@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import ReactPlayer from 'react-player';
+import ReactPlayer from 'react-player/lazy';
 
 import { VideoDiv } from './styles';
 

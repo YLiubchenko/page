@@ -22,7 +22,7 @@ const useAnalytics = () => {
       const data = await customLandingPageService.getAnalyticsSetting();
       // ReactGA.initialize(data.key);
       ReactGA.initialize('UA-153234955-1');
-      ReactPixel.init('UA-153234955-1');
+      // ReactPixel.init('UA-153234955-1');
 
       window.ANALYTICS_INITIALIZED = true;
 
